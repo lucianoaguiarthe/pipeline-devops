@@ -2,7 +2,7 @@
 # Implantação de um Pipeline DevOps
 <p align="center"><img src="manuscript/images/banner-devOps.jpeg"  width="400" height="234" align="middle"/></p>
 
-<p align="justify">Esse material tem como objetivo apresentar a ferramenta [TeamCity](https://www.jetbrains.com/teamcity/?source=google&medium=cpc&campaign=12704032062&gclid=Cj0KCQjwrJOMBhCZARIsAGEd4VEvmhLzrxXgIWnJJaBqSzEqfn_0Uv2Wb-uzBLFEWgfIOyCW-6GD5OEaAjL2EALw_wcB), cujo o objetivo implantar um Pipeline de desenvolvimento com Continuos Integration (CI) e Continuos Delivery (CD).</p>
+Esse material visa apresentar a ferramenta [TeamCity](https://www.jetbrains.com/teamcity/?source=google&medium=cpc&campaign=12704032062&gclid=Cj0KCQjwrJOMBhCZARIsAGEd4VEvmhLzrxXgIWnJJaBqSzEqfn_0Uv2Wb-uzBLFEWgfIOyCW-6GD5OEaAjL2EALw_wcB), cujo o objetivo implantar um Pipeline de desenvolvimento com Continuos Integration (CI) e Continuos Delivery (CD).
 
 > Autor: **[Luciano de Aguiar Monteiro](https://github.com/lucianoaguiarthe)**
 > 
