@@ -68,11 +68,23 @@
 
 <p align="center"><img src="images/29.png"  width="1000" height="53" align="middle"/></p>
 
-<p align="center"><img src="images/29.png"  width="410" height="41" align="middle"/></p>
-
 <p align="center"><img src="images/30.png"  width="410" height="41" align="middle"/></p>
 
+<p align="center"><img src="images/31.png"  width="700" height="145" align="middle"/></p>
 
+<p align="center"><img src="images/32.png"  width="600" height="163" align="middle"/></p>
+
+<p align="center"><img src="images/33.png"  width="1000" height="272" align="middle"/></p>
+
+<p align="center"><img src="images/34.png"  width="320" height="168" align="middle"/></p>
+
+<p align="center"><img src="images/35.png"  width="1000" height="365" align="middle"/></p>
+
+<p align="center"><img src="images/36.png"  width="1000" height="358" align="middle"/></p>
+
+<p align="center"><img src="images/37.png"  width="1000" height="433" align="middle"/></p>
+
+<p align="center"><img src="images/40.png"  width="1000" height="595" align="middle"/></p>
 
 <p align="justify">O resulado do comando é apresentado na imagem abaixo, no qual foi realizado o download no Docker Hub da imagem do Debian e gerado um container com o nome icev</p>
 
