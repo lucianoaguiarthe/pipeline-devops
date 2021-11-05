@@ -1,15 +1,17 @@
 # Container
-<p align="justify">O container é uma abstração de um sistema é a abstração de um Sistema Operacional, e a sua grande vantagem é empacotamento da aplicação, versionamento do código e facilidade de aplicação. Conforme abordado anteriormente a ferramenta que faz a gestão do container é o Docker, ele é o responsável por fazer a criação, inicialização e finalização do container.</p>
+<p align="justify">O c.</p>
 
 ## COMANDOS BÁSICOS DOCKER
 
-<p align="justify">A criação e administração de um container docker pode ser realizada através de sua CLI, ou através de algumas ferramentas gráficas por exemplo o Kitematic, ou ferramentas web como a Racher. Ao longo deste tópico abordaremos os comandos via CLI.</p>
+<p align="justify">A c.</p>
 
 ### CRIAÇÃO DE UM CONTAINER
 
 <p align="justify">Para criar um container execute o seguinte comando:</p> 
 
-<p align="left"><b> docker run -dit -p 80:80 --name icev --hostname srv-icev debian /bin/bash   </b></p>
+<p align="center"><img src="images/1.png"  width="300" height="208" align="middle"/></p>
+
+<p align="center"><img src="images/2.png"  width="300" height="225" align="middle"/></p>
 
 <p align="justify">O resulado do comando é apresentado na imagem abaixo, no qual foi realizado o download no Docker Hub da imagem do Debian e gerado um container com o nome icev</p>
 

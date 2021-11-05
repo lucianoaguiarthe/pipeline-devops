@@ -17,7 +17,7 @@ Esse material visa apresentar a ferramenta [TeamCity](https://www.jetbrains.com/
 ## Sumário
 
 
-1. [Configuração Máquina Virtual](manuscript/pipeline-cicd.md)
-2. [Instalação Docker](manuscript/Instalacao-Docker.md)
+1. [Arcabouço Teóricol](manuscript/pipeline-cicd.md)
+2. [Pipeline de Desenvolvimento](manuscript/pipeline-cicd.md)
 3. [Criação e Configuração do Container](manuscript/Configuracao-Docker.md)
 4. [Disponibilização Docker Hub](manuscript/Configuracao-DockerHub.md)
