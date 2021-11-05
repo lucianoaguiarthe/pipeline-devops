@@ -9,9 +9,25 @@
 
 <p align="justify">Para criar um container execute o seguinte comando:</p> 
 
-<p align="center"><img src="images/1.png"  width="300" height="208" align="middle"/></p>
+<p align="center"><img src="images/1.png"  width="600" height="417" align="middle"/></p>
 
 <p align="center"><img src="images/2.png"  width="600" height="450" align="middle"/></p>
+
+<p align="center"><img src="images/3.png"  width="800" height="372" align="middle"/></p>
+
+<p align="center"><img src="images/4.png"  width="600" height="488" align="middle"/></p>
+
+<p align="center"><img src="images/5.png"  width="800" height="370" align="middle"/></p>
+
+<p align="center"><img src="images/6.png"  width="400" height="312" align="middle"/></p>
+
+<p align="center"><img src="images/7.png"  width="700" height="324" align="middle"/></p>
+
+<p align="center"><img src="images/8.png"  width="800" height="369" align="middle"/></p>
+
+<p align="center"><img src="images/9.png"  width="800" height="369" align="middle"/></p>
+
+<p align="center"><img src="images/10.png"  width="800" height="369" align="middle"/></p>
 
 <p align="justify">O resulado do comando é apresentado na imagem abaixo, no qual foi realizado o download no Docker Hub da imagem do Debian e gerado um container com o nome icev</p>
 
