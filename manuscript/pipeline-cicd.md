@@ -1,31 +1,60 @@
-# Container
-<p align="justify">O c.</p>
+# Pipeline de Desenvolvimento
+<p align="justify">O Pipeline de Desenvolvimento é uma esteira de produdção de software automatizada com ferramentas utilizando práticas como <b>Continuous Integration</b> em que os desenvolvedores enviam os seus códigos em um repositório único, visando um fluxo automatizado e a <b>Continuous Delivery</b> que tem como objetivo implantar automática as alterações ocorridas no repositório em ambiente de produção. Diversas ferramentas tem o objetivo de disponibilizar este ambiente como <a href=""https://www.jenkins.io/">Jenkins</a>, e o TeamCity que é o foco deste material.</p>
 
-## COMANDOS BÁSICOS DOCKER
+## IMPLANTAÇÃO DO AMBIENTE
 
-<p align="justify">A c.</p>
+<p align="justify">Para implantação do ambiente como TeamCity, é possível adotar alguns modelos, utilizando a própia nuvem da desenvolvedora ou realizando uma instalação on premise, desta forma pode-se instalar em containers ou direto no servidores.</p>
 
-### CRIAÇÃO DE UM CONTAINER
 
-<p align="justify">Para criar um container execute o seguinte comando:</p> 
+### Instalação do Servidor TeamCity
+
+<p align="justify">O modelo de instalação que irei apresentar é rodando o Servidor TeamCity em containers, para isso existe o pré-requisito da instalação do Docker, não irei abordar esta parte no material, podendo ser encontrado toda a informação referente a instalação do docker neste <a href="https://docs.docker.com/engine/install/debian/">link</a></p>
+
+<p align="justify">Após a instalação basta criar o container do Servidor TeamCity com o comando descrito a seguir:</p>
+
+<blockquote>
+docker run -v team_city_data:/data/teamcity_server/datadir -v team_city_logs:/opt/teamcity/logs -p 8111:8111 -d jetbrains/teamcity-server
+</blockquote>
+
+<p align="justify">Ao concluir o download da imagem docker teamcity-server, será realizado a criação do container e você deverá acessar o servidor pelo seguinte endereço: https://ip_do_servidor:8111</p>
+
+### Configuração do Servidor TeamCity
+
+<p align="justify">O primeiro acesso irá apresentar a imagem descrita a seguir e fazer uma sequência de perguntas para a configuração.</>
 
 <p align="center"><img src="images/1.png"  width="600" height="417" align="middle"/></p>
 
+<p align="justify">O Servidro TeamCity suporta alguns tipos de banco de dados como MySql e Oracle, todavia neste exemplo irei utilizar o banco de dados interno sugerido pelo instalador <b>Internal HSQLDB</b></p>
+
 <p align="center"><img src="images/2.png"  width="600" height="450" align="middle"/></p>
+
+<p align="justify">Será apresentado a licença de uso que você deverá aceitar para continuar a instalação.</p>
 
 <p align="center"><img src="images/3.png"  width="800" height="372" align="middle"/></p>
 
+<p align="justify">É necessário ainda criar o usuário administrador do ambiente.</p>
+
 <p align="center"><img src="images/4.png"  width="600" height="488" align="middle"/></p>
+
+<p align="justify">Após concluir a instalação você deverá logar na aplicação no qual será solicitado para criar seu primeiro projeto.</p>
 
 <p align="center"><img src="images/5.png"  width="1000" height="463" align="middle"/></p>
 
-<p align="center"><img src="images/6.png"  width="400" height="312" align="middle"/></p>
+<p align="justify">Em nosso laboratório iremos utilizar um código de exemplo que realiza o download de uma imagem docker e irá publicar no docker hub, o código encontra neste <a href="https://github.com/lucianoaguiarthe/projeto-icev">link</a></p>
 
-<p align="center"><img src="images/7.png"  width="700" height="324" align="middle"/></p>
-
+<p align="justify">Para isso deveremos conectar o TeamCity ao GitHub no devemos adicionar uma conexão e cadastrar as credenciais de acesso solicitadas na janela descrita abaixo:</p>
 <p align="center"><img src="images/8.png"  width="1000" height="461" align="middle"/></p>
 
+<p align="center"><img src="images/6.png"  width="400" height="312" align="middle"/></p>
+
+<p align="justify">Ao concluir a configuração volte para a tela inicial e clique no botão criar projeto.</p>
+<p align="center"><img src="images/7.png"  width="700" height="324" align="middle"/></p>
+
+<p align="justify">Desta forma será exibido o github e voce conseguirá visualizar todos os repositórios da conta cadastrada, selecionando o repositório onde está seu código.</p>
+
 <p align="center"><img src="images/9.png"  width="1000" height="461" align="middle"/></p>
+
+<p align="justify">Em seguida será solicitado o nome da Build que você está construindo, atribua um nome e clique no botão Proceed.</p>
 
 <p align="center"><img src="images/10.png"  width="1000" height="461" align="middle"/></p>
 
