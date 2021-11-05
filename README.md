@@ -19,5 +19,3 @@
 
 1. [Arcabouço Teóricol](manuscript/pipeline-cicd.md)
 2. [Pipeline de Desenvolvimento](manuscript/pipeline-cicd.md)
-3. [Criação e Configuração do Container](manuscript/Configuracao-Docker.md)
-4. [Disponibilização Docker Hub](manuscript/Configuracao-DockerHub.md)
