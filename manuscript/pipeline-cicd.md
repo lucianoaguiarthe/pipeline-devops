@@ -11,7 +11,7 @@
 
 <p align="center"><img src="images/1.png"  width="300" height="208" align="middle"/></p>
 
-<p align="center"><img src="images/2.png"  width="300" height="225" align="middle"/></p>
+<p align="center"><img src="images/2.png"  width="600" height="450" align="middle"/></p>
 
 <p align="justify">O resulado do comando é apresentado na imagem abaixo, no qual foi realizado o download no Docker Hub da imagem do Debian e gerado um container com o nome icev</p>
 
