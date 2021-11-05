@@ -29,7 +29,7 @@
 
 <p align="center"><img src="images/10.png"  width="1000" height="461" align="middle"/></p>
 
-<p align="center"><img src="images/11.png"  width="1000" height="460" align="middle"/></p>
+
 
 <p align="center"><img src="images/12.png"  width="1000" height="463" align="middle"/></p>
 
@@ -39,9 +39,9 @@
 
 <p align="center"><img src="images/15.png"  width="1000" height="461" align="middle"/></p>
 
-<p align="center"><img src="images/16.png"  width="700" height="430" align="middle"/></p>
+<p align="center"><img src="images/16.png"  width="850" height="522" align="middle"/></p>
 
-<p align="center"><img src="images/17.png"  width="700" height="399" align="middle"/></p>
+<p align="center"><img src="images/17.png"  width="850" height="484" align="middle"/></p>
 
 <p align="center"><img src="images/18.png"  width="1000" height="463" align="middle"/></p>
 
