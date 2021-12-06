@@ -17,5 +17,5 @@
 ## Sumário
 
 
-1. [Arcabouço Teóricol](manuscript/pipeline-cicd.md)
+1. [Arcabouço Teórico](manuscript/pipeline-cicd.md)
 2. [Pipeline de Desenvolvimento](manuscript/pipeline-cicd.md)
