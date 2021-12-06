@@ -59,122 +59,74 @@ docker run -v team_city_data:/data/teamcity_server/datadir -v team_city_logs:/op
 <p align="center"><img src="images/10.png"  width="1000" height="461" align="middle"/></p>
 
 
+<p align="justify">A ferramenta irá realizar uma análise do código e auto detectar uma sequência de Builds, contudo iremos escolher configurar os passos do Build Manualmente.</p>
 
 <p align="center"><img src="images/12.png"  width="1000" height="463" align="middle"/></p>
 
+<p align="justify">O primeiro Build iremos construir a aplicação, em <b>Runner type</b> escolha Gradle, atribua um nome em <b>Step name</b> e em <b>Gradle Task</b> digite "clean build", por último salve as configurações.</p>
 <p align="center"><img src="images/13.png"  width="1000" height="462" align="middle"/></p>
 
+<p align="justify">Crie mais um passo,em <b>Runner type</b> escolha "Docker", atribua um nome em <b>Step name</b>, em <b>Path to file</b> aponte para o "Dockerfile" e em <b>Image name:tag</b> descreva o nome das imagens e suas tags, que você irá salvar no DockerHub, como por exemplo projeto-icev/demo-app:myapp-1.0 acrescentando o parâmetro build.number no final do nome da imagem e finalmente salve a configuração do passo.</p>
+
 <p align="center"><img src="images/14.png"  width="1000" height="465" align="middle"/></p>
+
 
 <p align="center"><img src="images/16.png"  width="850" height="522" align="middle"/></p>
 
 <p align="center"><img src="images/15.png"  width="1000" height="461" align="middle"/></p>
 
+<p align="justify">Crie mais um passo que irá enviar a imagem ao DockeHub, escolha em <b>Runner type</b> a opção "Docker", atribua um nome em <b>Step name</b>, em <b>Docker command</b> marque "push", em <b>Image name:tag</b>, use os mesmos nome das imagens criadas no passo anterior e salve as configurações</p>
 
 <p align="center"><img src="images/17.png"  width="850" height="484" align="middle"/></p>
 
+<p align="justify">Desta forma criamos um compilação completa do projeto em 3 (três) etapas.</p>
 <p align="center"><img src="images/18.png"  width="1000" height="463" align="middle"/></p>
 
+<p align="justify">Para que o TeamCity possa enviar a imagem compilada para o DockerHub é necessário configurar uma conexão, para isso vá em JavaApp e na lista de opções a esquerda clique em <b>Connections</b>.</p>
 <p align="center"><img src="images/19.png"  width="1000" height="464" align="middle"/></p>
 
+<p align="justify">Na tela seguinte clique em <b>Add Connection</b> e escolha a opção Docker Registry</p>
 <p align="center"><img src="images/20.png"  width="1000" height="465" align="middle"/></p>
 
+
+<p align="justify">Coloque o seu usuário e senha criado durante o cadastro no DockerHub, teste a conexão e salve</b>
 <p align="center"><img src="images/21.png"  width="600" height="447" align="middle"/></p>
 
 <p align="center"><img src="images/22.png"  width="700" height="522" align="middle"/></p>
 
-<p align="center"><img src="images/23.png"  width="1000" height="459" align="middle"/></p>
+<p align="justify">Vamos conectar o nosso projeto a conexão que criamos para o DockerHub, para isso volte para a tela do seu projeto e clique em <b>Build Features</b>, clique em <b>Add Build Features</b>, selecione <b>Docker Support</b>, escolha "Docker Registry" na opção <b>Select Repository</b>, clique em <b>Add</b> e salve as configurações.</b>
 
-<p align="center"><img src="images/24.png"  width="1000" height="463" align="middle"/></p>
-
-<p align="center"><img src="images/25.png"  width="850" height="392" align="middle"/></p>
-
-<p align="center"><img src="images/26.png"  width="700" height="253" align="middle"/></p>
+<p align="justify">Para executarmos as compilações se faz necessário o uso de agentes, que atualmente não existe nenhum agente configurado, o agente pode rodar em um docker ou pode-se baixar seus binários para executar em um server linux</p>
 
 <p align="center"><img src="images/27.png"  width="1000" height="463" align="middle"/></p>
 
+<p align="justify">Para instalarmos o agente em um Server Linux se faz necessário a instalação do Java, conforme comandos apresentados nas telas seguintes:
 <p align="center"><img src="images/28.png"  width="342" height="54" align="middle"/></p>
 
 <p align="center"><img src="images/29.png"  width="1000" height="53" align="middle"/></p>
 
 <p align="center"><img src="images/30.png"  width="410" height="41" align="middle"/></p>
 
+<p align="justify">No Server que está instalado o agente abra o arquivo "<TeamCity Agent Home>/conf/buildAgent.propertie" e altere o parâmetro <b>serverUrl</b>, apontando para o servidor que está instalado o TeamCity.</p>
 <p align="center"><img src="images/31.png"  width="700" height="145" align="middle"/></p>
 
+<p align="justify">Acesse a pasta "conf" onde está instalado o agente, e inicialize o serviço conforme figura abaixo:</p>
 <p align="center"><img src="images/32.png"  width="600" height="163" align="middle"/></p>
 
+
+<p align="justify">Após inicializar o agente, será exibido o seu IP no painel, no qual você deverá autorizar a conexão</p>
 <p align="center"><img src="images/33.png"  width="1000" height="272" align="middle"/></p>
 
 <p align="center"><img src="images/34.png"  width="320" height="168" align="middle"/></p>
 
-<p align="center"><img src="images/35.png"  width="1000" height="365" align="middle"/></p>
-
+<p align="justify">Ao concluir a conexão do agente já é possível executar o pipeline do ambiente</p>
 <p align="center"><img src="images/36.png"  width="1000" height="358" align="middle"/></p>
 
+<p align="justify">Se toda a configuração realizada estiver correta, será exibido todas as fases do build em execução</p>
 <p align="center"><img src="images/37.png"  width="1000" height="433" align="middle"/></p>
 
+<p align="justify">Para confirmar se a compilação e o pipeline foi executado corretamente, basta verificar o seu DockerHub, com a imagem criada.</p>
 <p align="center"><img src="images/40.png"  width="1000" height="595" align="middle"/></p>
 
-<p align="justify">O resulado do comando é apresentado na imagem abaixo, no qual foi realizado o download no Docker Hub da imagem do Debian e gerado um container com o nome icev</p>
-
-<p align="center"><img src="images/admin-docker/docker-run.png"  width="700" height="109" align="middle"/></p>
-
-<p align="justify">Explicando melhor os parâmetros do comando de criação do container:</p>
-
-* <b>run</b> é utilizado para rodar um comando em um novo container;
-* O parâmetro <b>-d</b> (deattaached) é para ser utilizado caso você não queira se conectar no container no momento de sua criação;
-* O parâmetro <b>-i</b> (--interactive na sua forma estendida) é utilizado para deixar a entrada de dados ao container aberta, caso você não esteja conectado (attached) no container em questão;
-* O parâmetro <b>-t</b> é utilizado para alocar um pseudo-tty para o container. Assim, podemos interagir com o interpretador de comando passando comandos para o /bin/bash, da mesma forma que usamos um terminal e uma máquina virtual ou máquina física;
-* O parâmetro <b>-p</b> realiza o mapeamento das portas entre o Sistema Operacional hospedeiro e o container;
-* <b>--name</b> é o nome que será atribuído ao container;
-* <b>--hostname</b> é o nome de rede que será atribuído ao container.
-
-### ACESSANDO O CONTAINER
-
-<p align="justify">Após a instalação do container se faz necessário acessá-lo para atualizar o container o instalar a aplicação, o comando  responsável por isso é o docker attach, conforme descrito abaixo:</p>
-
-
-<p align="center"><img src="images/admin-docker/docker-attach.png"  width="350" height="37" align="middle"/></p>
-
-
-
-<p align="justify">Observe que após a execução do comando o prompt do Sistema Operacional modificou, isso quer dizer que você passou a acessar o container.</p>
-
-
-<p align="center"><img src="images/important.png"  width="240" height="64" align="middle"/></p>
-
-<p align="justify">Para sair do container sem finalizar digite <b>ctrl + p + q</b>, se digitar exit o mesmo será finalizado</p>
-
-### INICIANDO OU PARANDO CONTAINER
-
-<p align="justify">Os comandos docker start ou docker stop são utilizado para iniciar ou parar a execução do container, devendo passar por parâmetros o nome do mesmo.</P>
-
-### CONSULTANDO AS IMAGENS DISPONÍVEIS
-
-<p align="justify">Caso o administrador do sistema necessite consultar as imagens que já foram baixadas no computador hospedeiro é necessário executar o comando docker images, conforme observado abaixo:</p>
-
-<p align="center"><img src="images/admin-docker/docker-images.png"  width="600" height="61" align="middle"/></p>
-
-### EXCLUSÃO DE CONTAINER
-
-<p align="justify">Quando não existe mais necessidade de um container criado o administrador do sistema finaliza o mesmo com o docker stop, todavia os arquivos ainda ficam residindo no sistema, para apagar este container deve ser usado o comando docker rm nome_do_container, o mesmo só será aceito se o container já estiver desligado.</P>
-
-### EXCLUSÃO DE IMAGEM
-
-<p align="justify">O docker rmi é utilizado quando o administrador do container deseja remover as imagens baixadas no repositório local, na imagem abaixo apresenta o comando de remoção da imagem nginx.</p>
-
-<p align="center"><img src="images/admin-docker/docker-rmi.png"  width="600" height="134" align="middle"/></p>
-
-### VISUALIZAÇÃO DOS CONTAINER EM EXECUÇÃO
-
-<p align="justify">Ao longo da administração de sistemas com docker se faz necessário visualizar os containers que estão em execução no momento, com este objetivo pode-se utilizar o comando docker ps, a figura abaixo apresenta um ambiente em que estão executando dois containers com o nome debian e ubuntu.</p>
-
-<p align="center"><img src="images/admin-docker/docker-ps.png"  width="800" height="73" align="middle"/></p>
-
-### CRIANDO UMA NOVA IMAGEM
-
-<p align="justify">Ao criar um container o administrador do sistema pode instalar aplicações neste, e caso haja necessita salvar a imagens para reutilizar este container já preparado, para isso pode realizar o commit com o comando docker commit imagem_alterada nova_imagem, a imagem abaixo apresenta um exemplo, onde é criado uma nova imagem img-icev a partir do container icev, logo em seguida é exibido a lista de imagens do repositório local já com a nova criada</p>
-
-<p align="center"><img src="images/admin-docker/docker-commit.png"  width="550" height="84" align="middle"/></p>
 
 [Início](/README.md)
